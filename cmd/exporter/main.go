@@ -43,7 +43,7 @@ func run(listenAddress, metricsPath, fcgiURI, scriptPath, scriptDir string) erro
 			return err
 		}
 
-		file.Chmod(0777)
+		file.Chmod(0644)
 
 		payload := "<?php\necho(json_encode(opcache_get_status()));\n"
 		_, err = file.WriteString(payload)
